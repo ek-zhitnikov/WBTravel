@@ -46,7 +46,6 @@ class ViewModel: ViewModelProtocol {
             networkService.getFLights(){ [weak self] result in
                 switch result {
                 case .success(let result):
-                    print(result.flights)
                     self?.state = .loaded(flights: result.flights)
                 case .failure(let error):
                     self?.state = .error(error)

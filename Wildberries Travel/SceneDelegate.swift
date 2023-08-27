@@ -16,13 +16,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let ns = NetworkService()
-        let vm = ViewModel(networksService: ns)
-        vm.refreshFlights(viewInput: .startLoad)
-        
-        
+        let vm = ViewModel(networksService: ns)        
+
         window = UIWindow(windowScene: windowScene)
         window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController: FlightsController())
+        window?.rootViewController = UINavigationController(rootViewController: FlightsController(viewModel: vm))
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
