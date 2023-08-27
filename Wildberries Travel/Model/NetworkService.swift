@@ -11,7 +11,7 @@ protocol NetworkServiceProtocol {
     func getFLights(completion: @escaping (Result<FlightResponse, Error>) -> Void)
 }
 
-final class NetworkService {
+final class NetworkService: NetworkServiceProtocol {
     
     func getFLights(completion: @escaping (Result<FlightResponse, Error>) -> Void) {
         

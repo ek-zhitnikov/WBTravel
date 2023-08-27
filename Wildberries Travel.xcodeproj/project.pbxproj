@@ -15,6 +15,7 @@
 		55CAC8F62A9B32E800BACEE5 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CAC8F52A9B32E800BACEE5 /* NetworkService.swift */; };
 		55CAC8F82A9B335700BACEE5 /* FlightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CAC8F72A9B335700BACEE5 /* FlightModel.swift */; };
 		55CAC8FA2A9B342A00BACEE5 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CAC8F92A9B342A00BACEE5 /* NetworkError.swift */; };
+		55CAC8FC2A9B357300BACEE5 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CAC8FB2A9B357300BACEE5 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		55CAC8F52A9B32E800BACEE5 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		55CAC8F72A9B335700BACEE5 /* FlightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightModel.swift; sourceTree = "<group>"; };
 		55CAC8F92A9B342A00BACEE5 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		55CAC8FB2A9B357300BACEE5 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		55CAC8F42A9B32A800BACEE5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				55CAC8FB2A9B357300BACEE5 /* ViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				55CAC8FA2A9B342A00BACEE5 /* NetworkError.swift in Sources */,
 				55CAC8F62A9B32E800BACEE5 /* NetworkService.swift in Sources */,
 				55CAC8F22A9B31B700BACEE5 /* FlightsController.swift in Sources */,
+				55CAC8FC2A9B357300BACEE5 /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

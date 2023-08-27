@@ -16,15 +16,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let ns = NetworkService()
-        ns.getFLights { result in
-            switch result {
-                
-            case .success(let fly):
-                print(fly.flights)
-            case .failure(_):
-                ()
-            }
-        }
+        let vm = ViewModel(networksService: ns)
+        vm.refreshFlights(viewInput: .startLoad)
+        
         
         window = UIWindow(windowScene: windowScene)
         window?.makeKeyAndVisible()
