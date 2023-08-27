@@ -12,6 +12,7 @@ class FlightsController: UIViewController {
     private var viewModel: ViewModelProtocol
     private var loadingIndicator: UIActivityIndicatorView!
     private var flights: [Flight] = []
+    private var collectionView: UICollectionView!
     
     init(viewModel: ViewModelProtocol) {
         self.viewModel = viewModel
@@ -25,6 +26,7 @@ class FlightsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupActivityIndicator()
+        setupCollectionView()
         bindViewModel()
         viewModel.refreshFlights(viewInput: .startLoad)
     }
@@ -44,7 +46,7 @@ class FlightsController: UIViewController {
                 DispatchQueue.main.async {
                     self.loadingIndicator.stopAnimating()
                     self.flights = flights
-                    print(self.flights)
+                    self.collectionView.reloadData()
                 }
             case .error(_):
                 DispatchQueue.main.async {
@@ -59,5 +61,36 @@ class FlightsController: UIViewController {
         loadingIndicator.center = view.center
         loadingIndicator.color = .white
         view.addSubview(loadingIndicator)
+    }
+    
+    private func setupCollectionView() {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: view.bounds.width - 40, height: 150)
+        layout.minimumLineSpacing = 10
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(FlightsViewCell.self, forCellWithReuseIdentifier: "FlightCell")
+        view.addSubview(collectionView)
+    }
+}
+
+extension FlightsController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return flights.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let flight = flights[indexPath.item]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FlightCell", for: indexPath) as! FlightsViewCell
+        cell.configure(with: flight)
+        return cell
+    }
+}
+
+extension FlightsController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
     }
 }

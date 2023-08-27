@@ -16,6 +16,7 @@
 		55CAC8F82A9B335700BACEE5 /* FlightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CAC8F72A9B335700BACEE5 /* FlightModel.swift */; };
 		55CAC8FA2A9B342A00BACEE5 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CAC8F92A9B342A00BACEE5 /* NetworkError.swift */; };
 		55CAC8FC2A9B357300BACEE5 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CAC8FB2A9B357300BACEE5 /* ViewModel.swift */; };
+		55CAC8FF2A9B3B2500BACEE5 /* FlightsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CAC8FE2A9B3B2500BACEE5 /* FlightsViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		55CAC8F72A9B335700BACEE5 /* FlightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightModel.swift; sourceTree = "<group>"; };
 		55CAC8F92A9B342A00BACEE5 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		55CAC8FB2A9B357300BACEE5 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		55CAC8FE2A9B3B2500BACEE5 /* FlightsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +79,7 @@
 		55CAC8F02A9B319600BACEE5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				55CAC8F12A9B31B700BACEE5 /* FlightsController.swift */,
+				55CAC8FD2A9B3A6600BACEE5 /* FlightsView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -98,6 +100,15 @@
 				55CAC8FB2A9B357300BACEE5 /* ViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		55CAC8FD2A9B3A6600BACEE5 /* FlightsView */ = {
+			isa = PBXGroup;
+			children = (
+				55CAC8F12A9B31B700BACEE5 /* FlightsController.swift */,
+				55CAC8FE2A9B3B2500BACEE5 /* FlightsViewCell.swift */,
+			);
+			path = FlightsView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +185,7 @@
 				55CAC8DC2A9B30B000BACEE5 /* AppDelegate.swift in Sources */,
 				55CAC8DE2A9B30B000BACEE5 /* SceneDelegate.swift in Sources */,
 				55CAC8FA2A9B342A00BACEE5 /* NetworkError.swift in Sources */,
+				55CAC8FF2A9B3B2500BACEE5 /* FlightsViewCell.swift in Sources */,
 				55CAC8F62A9B32E800BACEE5 /* NetworkService.swift in Sources */,
 				55CAC8F22A9B31B700BACEE5 /* FlightsController.swift in Sources */,
 				55CAC8FC2A9B357300BACEE5 /* ViewModel.swift in Sources */,
