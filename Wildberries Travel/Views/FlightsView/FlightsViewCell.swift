@@ -116,6 +116,7 @@ class FlightsViewCell: UICollectionViewCell {
         isLiked.toggle()
         let imageName = isLiked ? "heart.fill" : "heart"
         likeButton.setImage(UIImage(systemName: imageName), for: .normal)
+        UserDefaults.standard.saveLikeState(isLiked, for: flight.searchToken)
     }
     
     func configure(with flight: Flight) {
@@ -145,6 +146,8 @@ class FlightsViewCell: UICollectionViewCell {
     }
     
     private func updateLikeButtonState() {
+        let isLiked = UserDefaults.standard.getLikeState(for: flight.searchToken)
+        self.isLiked = isLiked
         let imageName = isLiked ? "heart.fill" : "heart"
         likeButton.setImage(UIImage(systemName: imageName), for: .normal)
     }

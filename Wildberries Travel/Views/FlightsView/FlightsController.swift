@@ -31,6 +31,11 @@ class FlightsController: UIViewController {
         viewModel.refreshFlights(viewInput: .startLoad)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
+    }
+    
     func bindViewModel() {
         viewModel.onStateDidChange = { [weak self] state in
             guard let self = self else {

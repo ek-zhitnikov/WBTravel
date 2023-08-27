@@ -153,6 +153,7 @@ class FlightController: UIViewController {
         isLiked.toggle()
         let imageName = isLiked ? "heart.fill" : "heart"
         likeButton.setImage(UIImage(systemName: imageName), for: .normal)
+        UserDefaults.standard.saveLikeState(isLiked, for: flight.searchToken)
     }
     
     private func configureFlightDetails() {
@@ -168,6 +169,8 @@ class FlightController: UIViewController {
     }
 
     private func updateLikeButtonState() {
+        let isLiked = UserDefaults.standard.getLikeState(for: flight.searchToken)
+        self.isLiked = isLiked
         let imageName = isLiked ? "heart.fill" : "heart"
         likeButton.setImage(UIImage(systemName: imageName), for: .normal)
     }
