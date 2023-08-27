@@ -19,6 +19,8 @@
 		55CAC8FF2A9B3B2500BACEE5 /* FlightsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CAC8FE2A9B3B2500BACEE5 /* FlightsViewCell.swift */; };
 		55CAC9022A9B3DB800BACEE5 /* FlightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CAC9012A9B3DB800BACEE5 /* FlightController.swift */; };
 		55CAC9052A9B40D300BACEE5 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CAC9042A9B40D300BACEE5 /* UserDefaults.swift */; };
+		55CAC9072A9B42A800BACEE5 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CAC9062A9B42A700BACEE5 /* UIViewController.swift */; };
+		55CAC9092A9B47C800BACEE5 /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CAC9082A9B47C800BACEE5 /* UICollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		55CAC8FE2A9B3B2500BACEE5 /* FlightsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsViewCell.swift; sourceTree = "<group>"; };
 		55CAC9012A9B3DB800BACEE5 /* FlightController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightController.swift; sourceTree = "<group>"; };
 		55CAC9042A9B40D300BACEE5 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		55CAC9062A9B42A700BACEE5 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		55CAC9082A9B47C800BACEE5 /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +72,6 @@
 		55CAC8DA2A9B30B000BACEE5 /* Wildberries Travel */ = {
 			isa = PBXGroup;
 			children = (
-				55CAC9032A9B409F00BACEE5 /* Extentions */,
 				55CAC8F42A9B32A800BACEE5 /* ViewModel */,
 				55CAC8F32A9B329400BACEE5 /* Model */,
 				55CAC8F02A9B319600BACEE5 /* Views */,
@@ -77,6 +80,7 @@
 				55CAC8E42A9B30B500BACEE5 /* Assets.xcassets */,
 				55CAC8E62A9B30B500BACEE5 /* LaunchScreen.storyboard */,
 				55CAC8E92A9B30B500BACEE5 /* Info.plist */,
+				55CAC9032A9B409F00BACEE5 /* Extentions */,
 			);
 			path = "Wildberries Travel";
 			sourceTree = "<group>";
@@ -129,6 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				55CAC9042A9B40D300BACEE5 /* UserDefaults.swift */,
+				55CAC9062A9B42A700BACEE5 /* UIViewController.swift */,
+				55CAC9082A9B47C800BACEE5 /* UICollectionViewCell.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -205,7 +211,9 @@
 			files = (
 				55CAC8F82A9B335700BACEE5 /* FlightModel.swift in Sources */,
 				55CAC8DC2A9B30B000BACEE5 /* AppDelegate.swift in Sources */,
+				55CAC9092A9B47C800BACEE5 /* UICollectionViewCell.swift in Sources */,
 				55CAC8DE2A9B30B000BACEE5 /* SceneDelegate.swift in Sources */,
+				55CAC9072A9B42A800BACEE5 /* UIViewController.swift in Sources */,
 				55CAC8FA2A9B342A00BACEE5 /* NetworkError.swift in Sources */,
 				55CAC8FF2A9B3B2500BACEE5 /* FlightsViewCell.swift in Sources */,
 				55CAC8F62A9B32E800BACEE5 /* NetworkService.swift in Sources */,

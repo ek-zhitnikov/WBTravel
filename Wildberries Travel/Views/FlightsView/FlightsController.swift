@@ -25,8 +25,11 @@ class FlightsController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupActivityIndicator()
+        if let navigationController = navigationController  {
+            navigationController.navigationBar.barTintColor = UIColor(named: "WBDark")
+        }
         setupCollectionView()
+        setupActivityIndicator()
         bindViewModel()
         viewModel.refreshFlights(viewInput: .startLoad)
     }
@@ -52,9 +55,10 @@ class FlightsController: UIViewController {
                     self.flights = flights
                     self.collectionView.reloadData()
                 }
-            case .error(_):
+            case .error(let error):
                 DispatchQueue.main.async {
                     self.loadingIndicator.stopAnimating()
+                    self.showAlert(alert: error.localizedDescription)
                 }
             }
         }
@@ -69,12 +73,13 @@ class FlightsController: UIViewController {
     
     private func setupCollectionView() {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: view.bounds.width - 40, height: 150)
+        layout.itemSize = CGSize(width: view.bounds.width - 40, height: 160)
         layout.minimumLineSpacing = 10
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(FlightsViewCell.self, forCellWithReuseIdentifier: "FlightCell")
+        collectionView.backgroundColor = UIColor(named: "WBDark")
         view.addSubview(collectionView)
     }
 }

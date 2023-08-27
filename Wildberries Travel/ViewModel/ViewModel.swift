@@ -13,7 +13,7 @@ protocol ViewModelProtocol {
     func refreshFlights (viewInput: ViewModel.ViewInput)
 }
 
-class ViewModel: ViewModelProtocol {
+final class ViewModel: ViewModelProtocol {
     
     enum State {
         case initial

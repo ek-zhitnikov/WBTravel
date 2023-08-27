@@ -9,8 +9,8 @@ import UIKit
 
 class FlightsViewCell: UICollectionViewCell {
     
-    private var isLiked: Bool = false
     var flight: Flight!
+    private var isLiked: Bool = false
 
     private lazy var priceLabel: UILabel = {
         let view = UILabel()
@@ -62,6 +62,7 @@ class FlightsViewCell: UICollectionViewCell {
         view.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
         let heartImage = UIImage(systemName: "heart")?.withRenderingMode(.alwaysTemplate)
         view.setImage(heartImage, for: .normal)
+        view.tintColor = UIColor(named: "WBLight")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -128,21 +129,6 @@ class FlightsViewCell: UICollectionViewCell {
         priceLabel.text = "\(flight.price) ₽"
         
         updateLikeButtonState()
-    }
-    
-    private func convertDateFormat(_ inputDateString: String) -> String? {
-        let inputDateFormatter = DateFormatter()
-        inputDateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZ 'UTC'"
-
-        let outputDateFormatter = DateFormatter()
-        outputDateFormatter.dateFormat = "dd MMMM yyyy"
-        
-        if let date = inputDateFormatter.date(from: inputDateString) {
-            let outputDateString = outputDateFormatter.string(from: date)
-            return outputDateString
-        } else {
-            return nil
-        }
     }
     
     private func updateLikeButtonState() {

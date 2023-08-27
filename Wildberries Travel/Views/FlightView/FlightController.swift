@@ -25,6 +25,7 @@ class FlightController: UIViewController {
         view.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
         let heartImage = UIImage(systemName: "heart")?.withRenderingMode(.alwaysTemplate)
         view.setImage(heartImage, for: .normal)
+        view.tintColor = UIColor(named: "WBLight")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -75,6 +76,15 @@ class FlightController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
+    private lazy var logoImageView: UIImageView = {
+        let view = UIImageView()
+        let logoImage = UIImage(named: "WB logo")
+        view.image = logoImage
+        view.contentMode = .scaleAspectFill
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
 
     convenience init(flight: Flight) {
         self.init()
@@ -83,23 +93,14 @@ class FlightController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = UIColor(named: "WBDark")
+        if let navigationController = navigationController {
+            navigationController.navigationBar.tintColor = .white
+        }
         setupBackgroundView()
         setupSubViews()
         configureFlightDetails()
     }
-
-    private func setupView() {
-        view.addSubview(backgroundView)
-        
-        NSLayoutConstraint.activate([
-            backgroundView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
-            backgroundView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 5),
-            backgroundView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 5),
-            backgroundView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 5),
-        ])
-    }
-
     
     private func setupBackgroundView() {
         view.addSubview(backgroundView)
@@ -119,6 +120,7 @@ class FlightController: UIViewController {
         backgroundView.addSubview(departureDateLabel)
         backgroundView.addSubview(returnLabel)
         backgroundView.addSubview(returnDateLabel)
+        backgroundView.addSubview(logoImageView)
 
         NSLayoutConstraint.activate([
             priceLabel.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
@@ -145,7 +147,12 @@ class FlightController: UIViewController {
             returnDateLabel.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
             returnDateLabel.topAnchor.constraint(equalTo: returnLabel.bottomAnchor, constant: 5),
             returnDateLabel.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -20),
-            returnDateLabel.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 20)
+            returnDateLabel.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 20),
+            
+            logoImageView.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
+            logoImageView.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: -50),
+            logoImageView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -20),
+            logoImageView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 20)
         ])
     }
     
@@ -173,35 +180,5 @@ class FlightController: UIViewController {
         self.isLiked = isLiked
         let imageName = isLiked ? "heart.fill" : "heart"
         likeButton.setImage(UIImage(systemName: imageName), for: .normal)
-    }
-    
-    private func convertDateFormat(_ inputDateString: String) -> String? {
-        let inputDateFormatter = DateFormatter()
-        inputDateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZ 'UTC'"
-
-        let outputDateFormatter = DateFormatter()
-        outputDateFormatter.dateFormat = "dd MMMM yyyy"
-        
-        if let date = inputDateFormatter.date(from: inputDateString) {
-            let outputDateString = outputDateFormatter.string(from: date)
-            return outputDateString
-        } else {
-            return nil
-        }
-    }
-    
-    private func convertDateFormat2(_ inputDateString: String) -> String? {
-        let inputDateFormatter = DateFormatter()
-        inputDateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZ 'UTC'"
-
-        let outputDateFormatter = DateFormatter()
-        outputDateFormatter.dateFormat = "HH:mm"
-        
-        if let date = inputDateFormatter.date(from: inputDateString) {
-            let outputDateString = outputDateFormatter.string(from: date)
-            return outputDateString
-        } else {
-            return nil
-        }
     }
 }
