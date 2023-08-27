@@ -17,6 +17,7 @@
 		55CAC8FA2A9B342A00BACEE5 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CAC8F92A9B342A00BACEE5 /* NetworkError.swift */; };
 		55CAC8FC2A9B357300BACEE5 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CAC8FB2A9B357300BACEE5 /* ViewModel.swift */; };
 		55CAC8FF2A9B3B2500BACEE5 /* FlightsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CAC8FE2A9B3B2500BACEE5 /* FlightsViewCell.swift */; };
+		55CAC9022A9B3DB800BACEE5 /* FlightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CAC9012A9B3DB800BACEE5 /* FlightController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		55CAC8F92A9B342A00BACEE5 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		55CAC8FB2A9B357300BACEE5 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		55CAC8FE2A9B3B2500BACEE5 /* FlightsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsViewCell.swift; sourceTree = "<group>"; };
+		55CAC9012A9B3DB800BACEE5 /* FlightController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		55CAC8F02A9B319600BACEE5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				55CAC9002A9B3D8400BACEE5 /* FlightView */,
 				55CAC8FD2A9B3A6600BACEE5 /* FlightsView */,
 			);
 			path = Views;
@@ -109,6 +112,14 @@
 				55CAC8FE2A9B3B2500BACEE5 /* FlightsViewCell.swift */,
 			);
 			path = FlightsView;
+			sourceTree = "<group>";
+		};
+		55CAC9002A9B3D8400BACEE5 /* FlightView */ = {
+			isa = PBXGroup;
+			children = (
+				55CAC9012A9B3DB800BACEE5 /* FlightController.swift */,
+			);
+			path = FlightView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +199,7 @@
 				55CAC8FF2A9B3B2500BACEE5 /* FlightsViewCell.swift in Sources */,
 				55CAC8F62A9B32E800BACEE5 /* NetworkService.swift in Sources */,
 				55CAC8F22A9B31B700BACEE5 /* FlightsController.swift in Sources */,
+				55CAC9022A9B3DB800BACEE5 /* FlightController.swift in Sources */,
 				55CAC8FC2A9B357300BACEE5 /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

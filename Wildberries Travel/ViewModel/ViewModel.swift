@@ -23,6 +23,7 @@ class ViewModel: ViewModelProtocol {
     }
     enum ViewInput {
         case startLoad
+        case flightDidSelect(selectedFlight: Flight, navigationController: UINavigationController)
     }
     
     var onStateDidChange: ((State) -> Void)?
@@ -51,6 +52,9 @@ class ViewModel: ViewModelProtocol {
                     self?.state = .error(error)
                 }
             }
+        case .flightDidSelect(selectedFlight: let selectedFlight, navigationController: let navigationController):
+            let flightController = FlightController(flight: selectedFlight)
+            navigationController.pushViewController(flightController, animated: true)
         }
     }
 }

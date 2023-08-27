@@ -40,7 +40,6 @@ class FlightsController: UIViewController {
             case .initial:
                 ()
             case .loading:
-                print("loading")
                 self.loadingIndicator.startAnimating()
             case let .loaded(flights):
                 DispatchQueue.main.async {
@@ -91,6 +90,8 @@ extension FlightsController: UICollectionViewDataSource {
 extension FlightsController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        let selectedFlight = flights[indexPath.item]
+        guard let navigationController else { return}
+        viewModel.refreshFlights(viewInput: .flightDidSelect(selectedFlight: selectedFlight, navigationController: navigationController))
     }
 }
