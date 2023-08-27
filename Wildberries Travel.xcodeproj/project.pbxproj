@@ -12,6 +12,9 @@
 		55CAC8E52A9B30B500BACEE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55CAC8E42A9B30B500BACEE5 /* Assets.xcassets */; };
 		55CAC8E82A9B30B500BACEE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55CAC8E62A9B30B500BACEE5 /* LaunchScreen.storyboard */; };
 		55CAC8F22A9B31B700BACEE5 /* FlightsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CAC8F12A9B31B700BACEE5 /* FlightsController.swift */; };
+		55CAC8F62A9B32E800BACEE5 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CAC8F52A9B32E800BACEE5 /* NetworkService.swift */; };
+		55CAC8F82A9B335700BACEE5 /* FlightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CAC8F72A9B335700BACEE5 /* FlightModel.swift */; };
+		55CAC8FA2A9B342A00BACEE5 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CAC8F92A9B342A00BACEE5 /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		55CAC8E72A9B30B500BACEE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55CAC8E92A9B30B500BACEE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55CAC8F12A9B31B700BACEE5 /* FlightsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsController.swift; sourceTree = "<group>"; };
+		55CAC8F52A9B32E800BACEE5 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		55CAC8F72A9B335700BACEE5 /* FlightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightModel.swift; sourceTree = "<group>"; };
+		55CAC8F92A9B342A00BACEE5 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,8 @@
 		55CAC8DA2A9B30B000BACEE5 /* Wildberries Travel */ = {
 			isa = PBXGroup;
 			children = (
+				55CAC8F42A9B32A800BACEE5 /* ViewModel */,
+				55CAC8F32A9B329400BACEE5 /* Model */,
 				55CAC8F02A9B319600BACEE5 /* Views */,
 				55CAC8DB2A9B30B000BACEE5 /* AppDelegate.swift */,
 				55CAC8DD2A9B30B000BACEE5 /* SceneDelegate.swift */,
@@ -70,6 +78,23 @@
 				55CAC8F12A9B31B700BACEE5 /* FlightsController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		55CAC8F32A9B329400BACEE5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				55CAC8F52A9B32E800BACEE5 /* NetworkService.swift */,
+				55CAC8F72A9B335700BACEE5 /* FlightModel.swift */,
+				55CAC8F92A9B342A00BACEE5 /* NetworkError.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		55CAC8F42A9B32A800BACEE5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,8 +167,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55CAC8F82A9B335700BACEE5 /* FlightModel.swift in Sources */,
 				55CAC8DC2A9B30B000BACEE5 /* AppDelegate.swift in Sources */,
 				55CAC8DE2A9B30B000BACEE5 /* SceneDelegate.swift in Sources */,
+				55CAC8FA2A9B342A00BACEE5 /* NetworkError.swift in Sources */,
+				55CAC8F62A9B32E800BACEE5 /* NetworkService.swift in Sources */,
 				55CAC8F22A9B31B700BACEE5 /* FlightsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
